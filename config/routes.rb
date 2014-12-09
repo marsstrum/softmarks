@@ -1,6 +1,8 @@
 Softmarks::Application.routes.draw do
+  devise_for :users
   get "welcome/index"
   get "welcome/about"
  
-  root to: 'welcome#index'
+  #root to: 'welcome#index'
+  root to: 'devise/registrations#new'
 end
