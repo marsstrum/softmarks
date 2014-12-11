@@ -2,6 +2,8 @@
 <div class="jumbotron">
 	<h1 class="center">Welcome to SoftMarks</h1>
 		<p class="center">Sign up to create bookmarked url's, share your bookmarks and like other users bookmarks</p>
-		<p class="center"><%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %></p>
+		<% if !current_user %>
+			<p class="center"><%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %></p>
+		<% end %>
 
 </div>
