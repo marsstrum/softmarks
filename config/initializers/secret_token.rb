@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Softmarks::Application.config.secret_key_base = '5a6ced361668277b0fedf7cb978db924f5fc7aebc24638b5f874f9df0dd1e211afb813bb4611b8f5698e8b71931a6a075103d581a0f1bca9b27dc09b0fd58238'
+Softmarks::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
