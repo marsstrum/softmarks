@@ -1,4 +1,6 @@
 Softmarks::Application.routes.draw do
+  resources :user_topics
+
   resources :topics
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

@@ -1,0 +1,29 @@
+<h1>Listing user_topics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Topic</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_topics.each do |user_topic| %>
+      <tr>
+        <td><%= user_topic.user_id %></td>
+        <td><%= user_topic.topic_id %></td>
+        <td><%= link_to 'Show', user_topic %></td>
+        <td><%= link_to 'Edit', edit_user_topic_path(user_topic) %></td>
+        <td><%= link_to 'Destroy', user_topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User topic', new_user_topic_path %>
