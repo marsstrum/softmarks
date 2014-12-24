@@ -6,6 +6,10 @@ Softmarks::Application.routes.draw do
   	resources :bookmarks
   end
   
+  resources :bookmarks, only: [:index] do
+    resources :like_bookmarks, only: [:create, :destroy]
+  end
+
   get "welcome/index"
   get "welcome/about"
  

@@ -5,7 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-  has_many :bookmarks
+  has_many :like_bookmarks
+  has_many :bookmarks, through: :like_bookmarks
+  
+  def liked(bookmark)
+    like_bookmarks.where(bookmark_id: bookmark.id).first
+  end
+
 
   def self.from_omniauth(auth)
 	  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

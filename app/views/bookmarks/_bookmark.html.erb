@@ -1,3 +1,4 @@
 		<div class="table-cell">
-			<%= link_to bookmark.url, bookmark.url %>
+			<%= link_to bookmark.url, bookmark.url %><br />
+			<%= render partial: 'like_bookmarks/like_bookmark', locals: { bookmark: bookmark }%>
 		</div>
