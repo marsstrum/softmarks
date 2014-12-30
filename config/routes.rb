@@ -14,6 +14,7 @@ Softmarks::Application.routes.draw do
   get "welcome/about"
  
   root to: 'welcome#index'
-  #root to: 'devise/registrations#new'
+
+  post :incoming, to: 'incoming#create'
 
 end

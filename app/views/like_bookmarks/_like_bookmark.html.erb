@@ -1,9 +1,9 @@
 <% if like_bookmark = current_user.liked(bookmark) %>
-	<%= link_to [bookmark, like_bookmark], class: 'btn btn-danger', method: :delete do %>
+	<%= link_to [bookmark, like_bookmark], class: 'btn btn-danger btn-sm', method: :delete do %>
 		<i class="glyphicon glyphicon-star-empty"></i>&nbsp; Unlike
 	<% end %>
 <% else %>
-	<%= link_to [bookmark, LikeBookmark.new], class: 'btn btn-primary', method: :post do %>
+	<%= link_to [bookmark, LikeBookmark.new], class: 'btn btn-primary btn-sm', method: :post do %>
 		<i class="glyphicon glyphicon-star"></i>&nbsp; Like
 	<% end %>
 <% end %>
