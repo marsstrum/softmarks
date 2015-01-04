@@ -31,7 +31,6 @@ class IncomingController < ApplicationController
     
     
 
-    ^#
     # You put the message-splitting and business
     # magic here. 
 
