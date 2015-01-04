@@ -26,7 +26,7 @@ class IncomingController < ApplicationController
           topic = Topic.find_or_create_by_name(topic_name)
             if !@bookmark.topic 
               @bookmark.topic = topic
-              @bookmar.save
+              @bookmark.save
             end
       end
 
