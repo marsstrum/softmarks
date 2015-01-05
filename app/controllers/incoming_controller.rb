@@ -18,7 +18,8 @@ class IncomingController < ApplicationController
       @bookmark = Bookmark.find_or_create_by_url(params['stripped-text'])
       @user = User.find_by_email(params[:sender]) 
 
-      @topics = params[:subject].gsub(/(^#+)|(\s#)/,'').split(' ')
+      #@topics = params[:subject].gsub(/(^#+)|(\s#)/,'').split(' ')
+      @topics = params[:subject].gsub(/(^#+)/,'').split(' ')
       # .. @topics = ["steelers", "bengals", "nfl"]
       # to get there from above, split on spaces, then do a regexx replace of # (and replace it with '')
       # iterate through topics and find or create by name for each one
