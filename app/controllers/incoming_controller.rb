@@ -19,11 +19,12 @@ class IncomingController < ApplicationController
       @user = User.find_by_email(params[:sender]) 
 
       #@topics = params[:subject].gsub(/(^#+)|(\s#)/,'').split(' ')
-      @topics = params[:subject].split(' ').gsub(/(^#+)/,'')
+      @topics = params[:subject].split(' ')
       # .. @topics = ["steelers", "bengals", "nfl"]
       # to get there from above, split on spaces, then do a regexx replace of # (and replace it with '')
       # iterate through topics and find or create by name for each one
       @topics.each do |topic_name|
+          topic_name.gsub!(/^#/,'')
           topic = Topic.find_or_create_by_name(topic_name)
             if !@bookmark.topic 
               @bookmark.topic = topic
