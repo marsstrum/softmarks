@@ -1,6 +1,11 @@
 Softmarks::Application.routes.draw do
+  get "user_topics/index"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, only: [:update]
+
+  resources :user_topics do
+    resources :bookmarks
+  end
 
   resources :topics do
   	resources :bookmarks

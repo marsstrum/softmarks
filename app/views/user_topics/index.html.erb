@@ -1,0 +1,36 @@
+<h2 class="center">My SoftMarks</h2>
+
+<div class="row">
+	<div class="col-md-12">
+		<% @my_topics.each do |topic| %>
+			<h3><%= link_to topic.name, topic %></h3>
+			<div class="table-container">
+				<div class="table-row">
+					<% topic.bookmarks.each do |bookmark| %>
+						<div class="table-cell">
+								<%= link_to bookmark.url, bookmark.url %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div><br />
+
+<h2 class="center">Liked SoftMarks</h2>
+<div class="row">
+	<div class="col-md-12">
+		<% @liked_topics.each do |topic| %>
+			<h3><%= link_to topic.name, topic %></h3>
+			<div class="table-container">
+				<div class="table-row">
+					<% topic.like_bookmarks.each do |bookmark| %>
+						<div class="table-cell">
+								<%= link_to like_bookmark.url, like_bookmark.url %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
