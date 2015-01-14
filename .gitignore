@@ -19,3 +19,5 @@
 /config/application.yml
 
 mailgunsimplemessage.rb
+
+/views/user_topics/Codeholder.html.erb

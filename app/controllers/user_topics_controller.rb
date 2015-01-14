@@ -10,4 +10,15 @@ class UserTopicsController < ApplicationController
 		@liked_topics = @like_bookmarks.collect(&:topic).uniq
 
   end
+
+  def destroy
+  	@user_bookmark = current_user.bookmarks.find(params[:id])
+  	if @user_bookmark.destroy
+  		flash[:notice] = "Removed bookmark."
+  		redirect_to :back
+  	else
+  		flash[:error] = "Unable to remove bookmark.  Please try again."
+  		redirect_to :back
+  	end
+  end
 end
