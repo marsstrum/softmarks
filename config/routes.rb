@@ -3,9 +3,7 @@ Softmarks::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, only: [:update]
 
-  resources :user_topics do
-    resources :bookmarks
-  end
+  resources :user_topics 
 
   resources :topics do
   	resources :bookmarks

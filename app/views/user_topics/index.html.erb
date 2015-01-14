@@ -6,11 +6,7 @@
 			<h3><%= link_to topic.name, topic %></h3>
 			<div class="table-container">
 				<div class="table-row">
-					<% topic.bookmarks.each do |bookmark| %>
-						<div class="table-cell">
-								<%= link_to bookmark.url, bookmark.url %>
-						</div>
-					<% end %>
+					<%= render bookmarks_for_topic(@bookmarks, topic) %>
 				</div>
 			</div>
 		<% end %>
@@ -24,11 +20,7 @@
 			<h3><%= link_to topic.name, topic %></h3>
 			<div class="table-container">
 				<div class="table-row">
-					<% topic.like_bookmarks.each do |bookmark| %>
-						<div class="table-cell">
-								<%= link_to like_bookmark.url, like_bookmark.url %>
-						</div>
-					<% end %>
+					<%= render bookmarks_for_topic(@like_bookmarks, topic) %>
 				</div>
 			</div>
 		<% end %>

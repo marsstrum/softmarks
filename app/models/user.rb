@@ -5,8 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+  has_many :bookmarks
   has_many :like_bookmarks
-  has_many :bookmarks, through: :like_bookmarks
+  #has_many :user_topics
+  
   
   def liked(bookmark)
     like_bookmarks.where(bookmark_id: bookmark.id).first
@@ -21,4 +23,8 @@ class User < ActiveRecord::Base
 	    #user.image = auth.info.image # assuming the user model has an image
 	  end
 	end
+
+  def liked_bookmarks
+    like_bookmarks.collect {|like_bookmark| like_bookmark.bookmark} # like_bookmarks.collect(&:bookmark)
+  end
 end
