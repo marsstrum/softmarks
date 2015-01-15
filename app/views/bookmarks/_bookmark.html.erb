@@ -1,5 +1,9 @@
 		<div class="table-cell">
-			<%= link_to bookmark.url, bookmark.url %><br />
+			<% link_text = bookmark.image.present? ? "<img src='#{bookmark.image}'/>".html_safe : bookmark.url %>
+      <%= link_to link_text, bookmark.url %><br />
+      <% if bookmark.image.present? %>
+      	<%= link_to bookmark.url, bookmark.url %><br />
+			<% end %>
 			<% if current_user.bookmarks.include?(bookmark) %>
 				<%= link_to "Remove", user_topic_path(bookmark), class: 'btn btn-danger btn-sm', method: :delete %>
 			<% else %>
