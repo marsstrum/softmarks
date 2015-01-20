@@ -19,7 +19,7 @@
            &nbsp; <%= link_to "My SoftMarks", user_topics_index_path %> &nbsp;
 	         <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 	       <% else %>
-	         <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> or <%= link_to "Sign In", new_user_session_path %>
+	         <%= link_to "Sign In", new_user_session_path %>
 	     		<% end %>
 	    </div>
 		</ul>

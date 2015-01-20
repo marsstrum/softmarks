@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 
   has_many :bookmarks
   has_many :like_bookmarks
-  #has_many :user_topics
   
   
   def liked(bookmark)
